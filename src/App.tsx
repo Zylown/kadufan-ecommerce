@@ -1,12 +1,10 @@
-import CustomButton from "./components/CustomButton";
-
+import { Route, Router } from "react-router-dom";
+import Home from "./pages/Home/Home";
 function App() {
   return (
-    <>
-      <div className="text-center">
-        <CustomButton>Hola</CustomButton>
-      </div>
-    </>
+    <Router>
+      <Route path="/" Component={<Home/>} />
+    </Router>
   );
 }
 
