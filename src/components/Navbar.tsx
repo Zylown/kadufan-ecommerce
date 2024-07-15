@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { IoSearch } from "react-icons/io5";
 
 export default function Navbar() {
   //   const [searchValue, setSearchValue] = useState<string>("");
@@ -14,13 +15,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex bg-gray-500 p-4 w-full gap-6 relative">
+    <nav className="flex bg-gray-500 p-4 w-full gap-6 relative items-center">
       <div className="pl-8">
         <Link to="/">
           <p>Logo</p>
         </Link>
       </div>
-      <div className="relative">
+      <div className="pl-12 relative">
         <button onMouseEnter={toggleCategories}>Categories</button>
         {showCategories && ( // Conditional rendering
           <ul
@@ -38,6 +39,18 @@ export default function Navbar() {
             </li>
           </ul>
         )}
+      </div>
+      <div className="flex relative">
+        <input
+          type="text"
+          placeholder="Search product"
+          className="p-1 rounded-md w-80"
+          // value={searchValue}
+          // onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <button className="absolute right-1 top-1/2 transform -translate-y-1/2">
+          <IoSearch className="text-lg" />
+        </button>
       </div>
       <div className="flex w-full justify-end">
         <ul className="flex gap-6 font-semibold">
