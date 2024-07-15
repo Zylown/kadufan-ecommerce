@@ -1,7 +1,7 @@
-import React from 'react'
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
 
-export default function MainLayout() {
-  return (
-    <div>MainLayout</div>
-  )
+export default function MainLayout({ children }: MainLayoutProps) {
+  return <div className="">{children}</div>;
 }
